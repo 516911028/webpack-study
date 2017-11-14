@@ -1,3 +1,5 @@
 body {
     background: url(../images/test.png) no-repeat;
+    /*background: red;*/
+    box-sizing: border-box;
 }

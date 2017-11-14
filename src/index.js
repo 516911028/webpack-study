@@ -1,14 +1,26 @@
-import _ from 'lodash';
-import './css/index.css';
-import Data from './test.csv';
+// import Vue from 'vue';
 
-function component() {
-    var element = document.createElement('div');
+// Vue.component('my-com', {
+//   props: {
+//     height: Number,
+//     age: {
+//       type: Number,
+//       default: 10,
+//       required: true,
+//       validator(val) {
+//         return val > 10;
+//       },
+//     }
+//   },
+//   template: `<div>height: {{height}}, age: {{age}}</div>`,
+// });
+//
+// new Vue({
+//   el: '#index',
+// });
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-    return element;
+let a = {
+  f(){
+    console.log(1);
+  }
 }
-
-console.log(Data);
-document.body.appendChild(component());
