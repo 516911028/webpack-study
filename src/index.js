@@ -17,4 +17,5 @@ Vue.component('my-com', {
 
 new Vue({
   el: '#index',
+  template: `<my-com></my-com>`,
 });
