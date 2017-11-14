@@ -1,26 +1,20 @@
-// import Vue from 'vue';
+import Vue from 'vue';
 
-// Vue.component('my-com', {
-//   props: {
-//     height: Number,
-//     age: {
-//       type: Number,
-//       default: 10,
-//       required: true,
-//       validator(val) {
-//         return val > 10;
-//       },
-//     }
-//   },
-//   template: `<div>height: {{height}}, age: {{age}}</div>`,
-// });
-//
-// new Vue({
-//   el: '#index',
-// });
+Vue.component('my-com', {
+  props: {
+    height: Number,
+    age: {
+      type: Number,
+      default: 10,
+      required: true,
+      validator(val) {
+        return val > 10;
+      },
+    }
+  },
+  template: `<div>height: {{height}}, age: {{age}}</div>`,
+});
 
-let a = {
-  f(){
-    console.log(1);
-  }
-}
+new Vue({
+  el: '#index',
+});
