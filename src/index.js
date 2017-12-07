@@ -1,21 +1,45 @@
 import Vue from 'vue';
 
 Vue.component('my-com', {
+  data(){
+    return {
+      a: '',
+    };
+  },
   props: {
     height: Number,
     age: {
       type: Number,
-      default: 10,
-      required: true,
-      validator(val) {
-        return val > 10;
-      },
     }
   },
-  template: `<div>height: {{height}}, age: {{age}}</div>`,
+  render(createElement){
+    let self = this;
+    return createElement('input', {
+      domProps: {
+        value: self.a
+      },
+      on: {
+        input(e){
+          self.a = e.target.value;
+          self.$emit('input', e.target.value);
+        }
+      },
+    });
+  },
 });
 
-new Vue({
+window.app = new Vue({
   el: '#index',
-  template: `<my-com></my-com>`,
+  data: {
+    message: 'Hello Vue!'
+  },
+  methods: {
+    showMessage(){
+      let vm = this;
+      alert(vm.message);
+    },
+    tracked(){
+      console.log('input');
+    },
+  },
 });
